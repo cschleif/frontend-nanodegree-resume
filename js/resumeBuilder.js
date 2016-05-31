@@ -184,7 +184,7 @@ projects.display = function() {
       }
     }
   }
-}
+};
 
 
 education.display();
