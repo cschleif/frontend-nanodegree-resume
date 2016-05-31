@@ -181,20 +181,20 @@ span {
 
     .biopic {
         width: 165px;
-    };
+    }
 }
 
 @media only screen and (max-width:962px) {
     .biopic {
         width: 175px;
         padding-top: 31px;
-    };
+    }
 }
 
 @media only screen and (max-width:900px) {
     .biopic {
         width: 175px;
-    };
+    }
 }
 
 @media only screen and (max-width: 750px) {
@@ -208,7 +208,7 @@ span {
 
     .welcome-message {
         display: none;
-    };
+    }
 }
 
 #map {
@@ -228,7 +228,7 @@ span {
   .biopic {
         display: block;
         padding-top: 21px;
-    };
+    }
 }
 
 .col-xs-offset-2 {
@@ -265,7 +265,6 @@ span {
 
 #footerContacts {
     background-color: #193441;
-}{color:red;
 }
 
 navigation {
