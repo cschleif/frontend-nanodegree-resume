@@ -11,7 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Muli", sans-serif;
 }
 
 .clear-fix {
@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: white;
   line-height: 48px;
   display: inline;
 }
@@ -44,6 +44,8 @@ h3 {
   font-size: 20px;
   color: #000;
   line-height: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 h4 {
@@ -94,27 +96,32 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 21px;
   color: #f3f3f3;
-  line-height: 28px;
+  line-height: 35px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #91aa9d;
   display: none;
+}
+
+#skills {
+  font-size: 19px;
 }
 
 .orange {
   background-color: #f5ae23;
 }
 
-.orange-text {
-  color: #f5ae23;
+.mode_contact {
+  color: #91aa9d;
 }
 
 .white-text {
-  font-weight: bold;
   color: #fff;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
 
 .gray {
@@ -129,7 +136,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #193441;
 }
 
 .flex-box {
@@ -151,8 +158,8 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
-  width: 200px;
+  padding-top: 18px;
+  width: 212px;
   display: none;
 }
 
@@ -174,6 +181,16 @@ span {
   #lets-connect {
     margin-top: 5%;
   }
+  .biopic {
+    width: 165px;
+  }
+}
+
+@media only screen and (max-width:962px) {
+  .biopic {
+    width: 175px;
+    padding-top: 31px;
+  }
 }
 
 @media only screen and (max-width:900px) {
@@ -187,7 +204,7 @@ span {
     margin-top: 10%;
   }
   .biopic {
-    width: 150px;
+    width: 175px;
   }
   .welcome-message {
     display: none;
@@ -210,5 +227,42 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+    padding-top: 21px;
   }
+}
+
+.col-xs-offset-2 {
+  font-size: 17px;
+}
+
+.header_role {
+  font-size: 21px;
+  color: #D0D0D0;
+}
+
+.online-courses {
+  padding-top: 20px;
+}
+
+.education-entry a {
+  margin-top: 1px;
+}
+
+.school-name, .education-entry .no-link {
+  margin-top: 10px;
+  color: #1199c3;
+}
+
+.employer {
+  margin-top: 20px;
+  color: #1199c3;
+}
+
+.orange {
+  background-color: #91aa9d;
+  color: #193441;
+}
+
+#footerContacts {
+  background-color: #193441;
 }
