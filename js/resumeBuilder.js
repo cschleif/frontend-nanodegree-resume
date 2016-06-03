@@ -56,14 +56,14 @@ var work = {
     "title": "Account Manager",
     "location": "Irvine, CA",
     "dates": "November 2013 - Janurary 2016",
-    "description": "Managed Cryogenic contract negotiations and sales within the Southern California region, with a focus on healthcare facilites."
+    "description": "Managed Cryogenic contract negotiations and sales within the <br> Southern California region, with a focus on healthcare facilites."
   },
   {
     "employer": "W.W Grainger",
     "title": "Territory Sales Representitive",
     "location": "Los Angeles, CA",
     "dates": "May 2012 - November 2013",
-    "description": "Sold Inventory Management solutions and MRO within the Los Angeles area with a focus on the aviation industry."
+    "description": "Sold Inventory Management solutions and MRO within the Los <br> Angeles area with a focus on the aviation industry."
     }
   ]
 };
@@ -73,7 +73,7 @@ var projects = {
   {
     "title": "Sample Project 1",
     "dates": "2016",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero expedita molestias sequi doloribus corrupti eos, animi <br> id a officia possimus totam commodi mollitia sit, voluptate libero. Odio earum, ex temporibus.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Vero expedita molestias sequi doloribus corrupti eos, animi id a officia possimus totam <br> commodi mollitia sit, voluptate libero. Odio earum, ex temporibus.",
     "images": [
       "http://placekitten.com/200/150",
       ]
@@ -94,21 +94,13 @@ bio.display = function() {
   $("#header").append(formattedName + "<br>", formattedRole, formattedPicture + "<br>", formattedWelcome + "<br>",formattedGithub, formattedEmail, formattedMobile, formattedLocation);
   $("#footerContacts").append(formattedMobile, formattedEmail);
 
-  if(bio.skills.length > 0) {
-
+  if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
-
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+    for (var i = 0; i < bio.skills.length; i ++ ) {
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+      }
   }
-
 };
 
 education.display = function() {
@@ -153,26 +145,23 @@ work.display = function() {
   };
 
 projects.display = function() {
-  for (project in projects.projects) {
+  projects.projects.forEach( function(project) {
     $("#projects").append(HTMLprojectStart);
-
-    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-    $(".project-entry:last").append(formattedTitle);
-
-    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-    $(".project-entry:last").append(formattedDates);
-
-    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-    $(".project-entry:last").append(formattedDescription);
-    if (projects.projects[project].images.length > 0) {
-      for (image in projects.projects[project].images)
-      {
-      var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-      $(".project-entry:last").append(formattedImage);
-      }
+    var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
+    var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+    var formattedImages = [];
+    if (project.images.length > 0) {
+      project.images.forEach(function(image) {
+        formattedImages = formattedImages + HTMLprojectImage.replace("%data%", image);
+      });
     }
-  }
+
+    var formattedProject = formattedTitle + formattedDates + formattedDescription + formattedImages;
+    $('.project-entry:last').append(formattedProject);
+  });
 };
+
 
 
 education.display();
