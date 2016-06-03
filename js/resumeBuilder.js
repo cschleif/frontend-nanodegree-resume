@@ -43,7 +43,7 @@ var education = {
     {
       "title": "HTML & CSS",
       "school": "Codeacademy",
-      "dates": "2015",
+      "date": "2015",
       "url": "https://www.codecademy.com/learn/web",
     }
   ]
@@ -122,7 +122,7 @@ education.display = function() {
   for (var online = 0; online < education.onlineCourses.length; online++) {
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[online].title);
     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[online].school);
-    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[online].dates);
+    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[online].date);
     var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[online].url);
     var formattedOnline = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL;
     $(".education-entry:last").append(formattedOnline);
