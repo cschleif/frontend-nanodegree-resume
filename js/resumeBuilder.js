@@ -12,7 +12,7 @@ var bio = {
       "HTML",
       "CSS", "JS", "Bootstrap",
     ],
-    "bioPic": "images/profile.jpg"
+    "biopic": "images/profile.jpg"
 };
 
 var education = {
@@ -22,7 +22,7 @@ var education = {
       "location": "Fullerton, CA",
       "degree": "Bachelors",
       "majors": ["Bachelor of Arts in American Studies"],
-      "dates": 2012,
+      "dates": "2012",
       "url": "https://www.fullerton.edu"
     }
   ],
@@ -31,19 +31,19 @@ var education = {
   {
       "title": "Front-end Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": 2016,
+      "dates": "2016",
       "url": "http://www.udacity.com/courses"
     },
     {
       "title": "Ruby",
       "school": "Codeacademy",
-      "dates": 2016,
+      "dates": "2016",
       "url": "https://www.codecademy.com/learn/ruby",
     },
     {
       "title": "HTML & CSS",
       "school": "Codeacademy",
-      "dates": 2015,
+      "dates": "2015",
       "url": "https://www.codecademy.com/learn/web",
     }
   ]
@@ -85,7 +85,7 @@ bio.display = function() {
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
   var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-  var formattedPicture = HTMLbioPic.replace("%data%", bio.bioPic);
+  var formattedPicture = HTMLbioPic.replace("%data%", bio.biopic);
   var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
   var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -138,7 +138,6 @@ education.display = function() {
 };
 
 work.display = function() {
-
   for (var job = 0; job < work.jobs.length; job++) {
     $("#workExperience").append(HTMLworkStart);
 
@@ -152,17 +151,6 @@ work.display = function() {
     $(".work-entry:last").append(formattedJob);
     }
   };
-
-// function inName(name) {
-//   name = name.trim().split(" ");
-//   console.log(name);
-//   name[1] = name[1].toUpperCase();
-//   name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-//   return name[0] +" "+ name[1]
-// }
-
-// $("#main").append(internationalizeButton);
 
 projects.display = function() {
   for (project in projects.projects) {
