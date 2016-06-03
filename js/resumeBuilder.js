@@ -31,13 +31,13 @@ var education = {
   {
       "title": "Front-end Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": "2016",
+      "date": "2016",
       "url": "http://www.udacity.com/courses"
     },
     {
       "title": "Ruby",
       "school": "Codeacademy",
-      "dates": "2016",
+      "date": "2016",
       "url": "https://www.codecademy.com/learn/ruby",
     },
     {
